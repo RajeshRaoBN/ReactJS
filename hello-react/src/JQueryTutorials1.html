@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>This is a dissapearing header</h1>
+<h2>This will slide up and down</h2>
+<h3>This one will have CSS</h3>
+<p>Click to hide this paragraph itself</p>
+<h3 class="special" id="One">This one has and id</h3>
+<h3 class="special" id="Two">This is a special class</h3>
+<script>
+    $(document).ready(function () {
+        $("h1").show(1000).hide(1000).show(1000).hide(1000).show(1000).hide(1000);
+        $("h2").slideUp(1000).delay(500).slideDown(1000);
+        $("h3").css({color:'red', fontWeight:'bold'});
+        $("h3").html('I have changed the display');
+        $("p").on('click', function () {
+            $("p").toggle();
+            
+        });
+        $("h3[id=One]").css({color:'blue', backgroundColor:'red'});
+        $(".special").on('click', function () {
+            var h1id = $(this).attr('id');
+            alert(h1id);
+
+        })
+    });
+</script>
+
+</body>
+</html>
